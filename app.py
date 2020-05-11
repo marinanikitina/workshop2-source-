@@ -8,7 +8,7 @@ def start():
     return 'hi there'
 
 
-@app.route('/api/<action>', methods=['GET'])
+@app.route('https://workshop2nikitina.herokuapp.com/api/<action>', methods=['GET'])
 def apiget(action):
     if action == "client":
         return render_template("client.html", client=client_dictionary)
@@ -23,7 +23,7 @@ def apiget(action):
         return render_template("404.html", action_value=action)
 
 
-@app.route('/api/client/submit', methods=['POST'])
+@app.route('https://workshop2nikitina.herokuapp.com/api/client/submit', methods=['POST'])
 def client_submit():
     if (request.method == 'POST'):
         return str(request.form['first_name']) + " " + str(request.form['number'])
