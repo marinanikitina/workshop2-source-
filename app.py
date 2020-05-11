@@ -2,6 +2,16 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+client_dictionary = {
+    "client_name": "Bob",
+    "client_number": "20-20-32",
+}
+
+event_dictionary = {
+    "event_name": "Concert",
+    "event_price": 100,
+}
+
 @app.route('/')
 def start():
     return 'hi there'
@@ -35,14 +45,6 @@ def event_submit():
 
 
 if __name__ == '__main__':
-    client_dictionary = {
-        "client_name": "Bob",
-        "client_number":"20-20-32",
-    }
 
-    event_dictionary = {
-        "event_name": "Concert",
-        "event_price": 100,
-    }
 
     app.run()
