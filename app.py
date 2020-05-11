@@ -29,7 +29,7 @@ def client_submit():
         return str(request.form['first_name']) + " " + str(request.form['number'])
 
 
-@app.route('/api/event/submit', methods=['POST'])
+@app.route('https://workshop2nikitina.herokuapp.com/api/event/submit', methods=['POST'])
 def event_submit():
     if (request.method == 'POST'):
         return str(request.form['name']) + " " + str(request.form['price'])
