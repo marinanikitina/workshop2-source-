@@ -2,6 +2,10 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+@app.route('/')
+def start():
+    return 'hi there'
+
 
 @app.route('/api/<action>', methods=['GET'])
 def apiget(action):
@@ -19,13 +23,13 @@ def apiget(action):
 
 
 @app.route('/api/client/submit', methods=['POST'])
-def user_submit():
+def client_submit():
     if (request.method == 'POST'):
         return str(request.form['first_name']) + " " + str(request.form['number'])
 
 
 @app.route('/api/event/submit', methods=['POST'])
-def tour_submit():
+def event_submit():
     if (request.method == 'POST'):
         return str(request.form['name']) + " " + str(request.form['price'])
 
